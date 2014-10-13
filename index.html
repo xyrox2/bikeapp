@@ -11,18 +11,133 @@
         <link rel="stylesheet" type="text/css" href="css/vendors/jquery.mobile.inline-svg-1.4.4.min.css" />
         <link rel="stylesheet" type="text/css" href="css/vendors/jquery.mobile-1.4.4.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>StolenBike</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-            <button onclick="app.login()">Login Nativ</button>
-
+        <!-- Page TEST -->
+        <div data-role="page" id="one" data-url="one" tabindex="0" >
+            <a href="#index" data-role="button">Index</a>
+            <a href="#welcome" data-transition="pop" data-rel="dialog" data-role="button">Willkommen</a>
+            <a href="#login" data-role="button">Login</a>
+            <a href="#map" data-role="button">Map</a>
+            <a href="#event" data-role="button">Melden</a>
+            <a href="#myplace" data-role="button">Mein Ort</a>
         </div>
+        <!-- Page Index -->
+        <div data-role="page" id="index" data-url="index">
+          <div data-role="content" data-theme="d">
+            <i class="bike-quote"></i>
+            <h2>SCHÜTZE DEINEN ESEL</h2>
+            <p>Melde dich an und mache Dieben das Leben schwer.</p>
+            <p><a href="#login" data-role="button" data-inline="true">LOGIN</a></p>
+          </div><!-- /content -->
+        </div>
+        <!-- Page Willkommen -->
+        <div data-role="page" id="welcome" data-url="welcome">
+          <div data-role="header">
+            <!-- Backbutton-->
+            <p>
+              <a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back"></a>
+            </p>
+            <p>
+              Willkommen
+            </p>
+          </div>
+          <div data-role="content" data-theme="d">
+            <h2>Willkommen</h2>
+            <p>Diese App .... ergaunern.</p>
+            <p>Hier eine kurze Erklärung der Symbole:</p>
+
+            <div class="icon">
+              <i class="warning"></i>
+              <p>Warnsymbol, für ein geklautes Rad.</p>
+            </div>
+            <div class="icon">
+              <i class="warning"></i>
+              <p>Dein Ausgangspunkt für den Suchradius. Ein Klick auf das Auge,
+              erlaubt dir den Startpunkt zu ändern
+              </p>
+            </div>
+            <p><a href="#index" data-role="button" data-inline="true">WEITER</a></p>
+          </div><!-- /content -->
+        </div>
+        <!-- Page Login -->
+        <div data-role="page" id="login" data-url="login">
+          <div data-role="header">
+            <!-- Backbutton-->
+            <p>
+              <a href="#index" data-rel="index" data-role="button" data-inline="true" data-icon="back"></a>
+            </p>
+            <p>
+              Login
+            </p>
+          </div>
+          <div data-role="content" data-theme="d">
+            <div class="messages">
+              <p class="failure">DEINE EMAIL ODER DEIN PASSWORT IST NICHT KORREKT</p>
+            </div>
+            <a href="#register" data-url="register" data-role="button">Registrieren</a>
+            <p>oder<p>
+            <input type="text" name="email" placeholder="E-Mail" value=""/>
+            <input type="text" name="password" placeholder="Password" value=""/>
+            <a href="#reset" data-url="reset" data-role="button">Passwort vergessen?</a>
+          </div><!-- /content -->
+        </div>
+        <!-- Page Map -->
+        <div data-role="page" id="map" data-url="map">
+          <div data-role="header">
+            <!-- Backbutton-->
+            <p>
+              Meldungen
+            </p>
+          </div>
+          <div data-role="content" data-theme="d">
+            <div class="map"></div>
+            <a href="#event" data-url="event" data-role="button">DIEBSTAHL MELDEN</a>
+          </div><!-- /content -->
+        </div>
+        <!-- Page Meldung -->
+        <div data-role="page" id="event" data-url="event">
+          <div data-role="header">
+            <!-- Backbutton-->
+            <p>
+              <a href="#map" data-rel="map" data-role="button" data-inline="true" data-icon="back"></a>
+            </p>
+            <p>
+              Melden
+            </p>
+          </div>
+          <div data-role="content" data-theme="d">
+            <div class="messages">
+              <p class="success">HIER KANNST DU EIN GESTOHLENES FAHRRAD MELDEN</p>
+            </div>
+            <input type="text" name="location" placeholder="Ort" value=""/>
+            <input type="text" name="datetime" placeholder="Zeit" value=""/>
+            <a href="#map" data-url="map" data-role="button">DIEBSTAHL MELDEN</a>
+          </div><!-- /content -->
+        </div>
+        <!-- Page Ausgangsort -->
+        <div data-role="page" id="myplace" data-url="myplace">
+          <div data-role="header">
+            <!-- Backbutton-->
+            <p>
+              <a href="#map" data-rel="map" data-role="button" data-inline="true" data-icon="back"></a>
+            </p>
+            <p>
+              Melden
+            </p>
+          </div>
+          <div data-role="content" data-theme="d">
+            <div class="messages">
+              <p class="success">HIER KANNST DU EINE ADRESSE EINGEBEN FÜR DEINEN BENACHRICHTIGUNGSRADIUS</p>
+            </div>
+            <input type="text" name="location" placeholder="Ort" value=""/>
+            <input type="text" name="datetime" placeholder="Zeit" value=""/>
+            <a href="#map" data-url="map" data-role="button">Speichern</a>
+          </div><!-- /content -->
+        </div>
+
+        <!--Scripts-->
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/vendors/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/vendors/jquery.mobile-1.4.4.min.js"></script>

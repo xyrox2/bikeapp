@@ -6,9 +6,8 @@ var app = {
     init: function() {
         $(document).ready(function() {
           // Handler for .ready() called.
-
+          document.addEventListener("deviceready", onDeviceReady, true);
         });
-        document.addEventListener("deviceready", onDeviceReady, true);
     },
     // deviceready Event Handler
     //
