@@ -41,6 +41,11 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
+    <gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.5.0" />
+    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
+      <param name="APP_ID" value="374246516065244" />
+      <param name="APP_NAME" value="bikeapp" />
+  </gap:plugin>
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="res/icon/android/icon-48-mdpi.png" />
