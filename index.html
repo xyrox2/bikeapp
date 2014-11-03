@@ -83,6 +83,40 @@
             <a href="#reset" data-url="reset" data-role="button">Passwort vergessen?</a>
           </div><!-- /content -->
         </div>
+        <!-- Page Registrieren -->
+        <div data-role="page" id="register" data-url="register">
+          <div data-role="header">
+            <!-- Backbutton-->
+            <p>
+              <a href="#login" data-rel="login" data-role="button" data-inline="true" data-icon="back"></a>
+            </p>
+            <p>
+              Registrieren
+            </p>
+          </div>
+          <div data-role="content" data-theme="d">
+            <input type="text" name="email" placeholder="E-Mail" value=""/>
+            <input type="text" name="password" placeholder="Password" value=""/>
+            <input type="text" name="password" placeholder="Password bestätigen" value=""/>
+            <a href="#map" data-url="map" data-role="button">REGISTRIEREN</a>
+          </div><!-- /content -->
+        </div>
+        <!-- Page Reset -->
+        <div data-role="page" id="reset" data-url="reset">
+          <div data-role="header">
+            <!-- Backbutton-->
+            <p>
+              <a href="#login" data-rel="login" data-role="button" data-inline="true" data-icon="back"></a>
+            </p>
+            <p>
+              Login
+            </p>
+          </div>
+          <div data-role="content" data-theme="d">
+            <input type="text" name="email" placeholder="E-Mail" value=""/>
+            <a href="#login" data-url="login" data-role="button">PASSWORT ZURÜCKSETZEN</a>
+          </div><!-- /content -->
+        </div>
         <!-- Page Map -->
         <div data-role="page" id="map" data-url="map">
           <div data-role="header">
@@ -92,7 +126,7 @@
             </p>
           </div>
           <div data-role="content" data-theme="d">
-            <div class="map"></div>
+            <div id="map-canvas"></div>
             <a href="#event" data-url="event" data-role="button">DIEBSTAHL MELDEN</a>
           </div><!-- /content -->
         </div>
@@ -142,6 +176,7 @@
         <script type="text/javascript" src="js/vendors/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/vendors/jquery.mobile-1.4.4.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <script type="text/javascript">
           jQuery(function($){
             app.init();
